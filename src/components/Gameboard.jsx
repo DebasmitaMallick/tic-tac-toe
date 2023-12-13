@@ -1,18 +1,7 @@
 import React from 'react';
 
-const initialGameBoard = [
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-];
-
-const Gameboard = ({ onSelectSquare, turns }) => {
-    let gameBoard = initialGameBoard;
-    for(const turn of turns) {
-        const { square, player } = turn;
-        const { row, col } = square
-        gameBoard[row][col] = player
-    }
+const Gameboard = ({ onSelectSquare, board }) => {
+    console.log('gameboard');
 
     // const handleSelectSquare = (rowIdx, colIdx) => {
     //     setGameBoard((prevGameBoard) => {
@@ -28,7 +17,7 @@ const Gameboard = ({ onSelectSquare, turns }) => {
     return (
         <ol id='game-board'>
             {
-                gameBoard.map((row, rowIdx) => 
+                board.map((row, rowIdx) => 
                     <li key={rowIdx}>
                         <ol>
                             {

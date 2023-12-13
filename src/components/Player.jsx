@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 export const Player = ({initialName, symbol, isActive}) => {
+    console.log('player')
     const [ playerName, setPlayerName ] = useState(initialName)
     const [ isEditing, setIsEditing ] = useState(false);
 
