@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 
-export const Player = ({initialName, symbol, isActive}) => {
-    console.log('player')
+export const Player = ({initialName, symbol, isActive, onChangeName}) => {
     const [ playerName, setPlayerName ] = useState(initialName)
     const [ isEditing, setIsEditing ] = useState(false);
 
     const handleEditClick = () => {
-        setIsEditing((editable) => !editable)
+        setIsEditing((editable) => !editable);
+
+        if(isEditing) {
+            onChangeName(symbol, playerName);
+        }
     }
 
     const handleChange = (event) => {
